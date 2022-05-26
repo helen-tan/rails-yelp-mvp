@@ -16,9 +16,14 @@ puts "Creating restaurants..."
 
 5.times do
   rest = Restaurant.new(
-    name: ,
-    address: ,
-    phone_number: ,
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
     category: categories.sample
   )
+
+  rest.save!
+
+  puts "#{rest.name} created!"
 end
+puts "Finished!"
