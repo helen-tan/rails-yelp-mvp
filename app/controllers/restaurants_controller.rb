@@ -14,11 +14,16 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.save
     if @restaurant.save
-      redirect_to restaurants_path, notice: 'Restaurant was successfully created.'
+      redirect_to restaurant_path(@restaurant), notice: 'Restaurant was successfully created.'
     else
       # raise
       render :new
     end
+  end
+
+  # GET "restaurants/:id"
+  def show
+    @restaurant = Restaurant.find(params[:id])
   end
 
   private

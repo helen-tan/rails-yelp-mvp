@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 
   # GET "restaurants/:id" - A visitor can see the details of ONE restaurant, with all its reviews
-
+  get "restaurants/:id", to: "restaurants#show", as: :restaurant
 
   # GET "restaurants/:id/reviews/new"  (need nested resources)
   # POST "restaurants/:id/reviews" - A visitor can add a new review to a restaurant
