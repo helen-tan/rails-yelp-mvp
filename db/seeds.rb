@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Seed restaurant database with at least 5 valid restaurant records
+puts "Cleaning database..."
+Restaurant.destroy_all
+
+categories = ["chinese", "italian", "japanese", "french", "belgian"]
+
+puts "Creating restaurants..."
+
+5.times do
+  rest = Restaurant.new(
+    name: ,
+    address: ,
+    phone_number: ,
+    category: categories.sample
+  )
+end
