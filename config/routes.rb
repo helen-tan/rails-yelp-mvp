@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
 
   # GET "restaurants/:id/reviews/new"  (need nested resources)
+  resources :restaurants, only: [:show] do # we only want "restaurants/:id" from the show action, not all 7 CRUD actions
+    resources :reviews, only: [:new, :create]
+  end
+
   # POST "restaurants/:id/reviews" - A visitor can add a new review to a restaurant
 end
