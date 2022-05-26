@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # GET "restaurants/new"
   # POST "restaurants" - A visitor can add a new restaurant, and be redirected to the show view of that restaurant
+  get "restaurants/new", to: "restaurants#new", as: :new_restaurant
+  post "restaurants", to: "restaurants#create"
 
 
   # GET "restaurants/:id" - A visitor can see the details of ONE restaurant, with all its reviews
