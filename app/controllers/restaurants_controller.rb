@@ -12,12 +12,20 @@ class RestaurantsController < ApplicationController
   # POST "restaurants"
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
+    @restaurant.save
     if @restaurant.save
-      redirect_to @restaurant, notice: 'Restaurant was successfully created.'
+      redirect_to restaurants_path, notice: 'Restaurant was successfully created.'
     else
+      # raise
       render :new
     end
+  end
+
+  private
+
+  # Strong params
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
   end
 
 end

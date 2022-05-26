@@ -1,11 +1,13 @@
 <br>
 <br>
 <br>
+<h2>Add a new Restaurant</h2>
 
 <%= simple_form_for(@restaurant) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.input :phone %>
+  <%= f.input :phone_number %>
+  <%= f.input :category, collection: %w(chinese italian japanese french belgian) %>
 
-  <%= f.submit %>
+  <%= f.submit "Submit", class: "btn btn-primary"%>
 <% end %>
